@@ -25,9 +25,9 @@ export FLASK_ENV=development
 flask run
 ```
 
-..* Setting the `FLASK_ENV` variable to `development` will detect file changes and restart the server automatically.
+* Setting the `FLASK_ENV` variable to `development` will detect file changes and restart the server automatically.
 
-..* Setting the `FLASK_APP` variable to `flaskr` directs flask to use the `flaskr` directory and the `__init__.py` file to find the application. 
+* Setting the `FLASK_APP` variable to `flaskr` directs flask to use the `flaskr` directory and the `__init__.py` file to find the application. 
 
 These commands put the application in development and directs our application to use the `__init__.py` file in our flaskr folder. Working in development mode shows an interactive debugger in the console and restarts the server whenever changes are made. If running locally on Windows, look for the commands in the Flask documentation.
 
@@ -56,8 +56,8 @@ All tests are kept in that file and should be maintained as updates are made to 
 ## API Reference
 
 ### Getting Started
-..* Base URL: At present this app can only be run locally and is not hosted as a base URL. The backend app is hosted at the default, `http:127.0.0.1:5000/`
-..* Authentication: This version of the application does not require authentication or API keys.
+* Base URL: At present this app can only be run locally and is not hosted as a base URL. The backend app is hosted at the default, `http:127.0.0.1:5000/`
+* Authentication: This version of the application does not require authentication or API keys.
 
 ### Error Handling
 Errors are returned as JSON objects in the following format:
@@ -70,17 +70,17 @@ Errors are returned as JSON objects in the following format:
 ```
 
 The API will return these error types when requests fail:
-..* 400: Bad Request
-..* 404: Not Found
-..* 405: Method Not Allowed
-..* 422: Unprocessable
-..* 500: Server Error
+* 400: Bad Request
+* 404: Not Found
+* 405: Method Not Allowed
+* 422: Unprocessable
+* 500: Server Error
 
 ### Endpoints
 ##### GET /questions
-..* General:
-  ..* Returns a list of questions, success, and total number of questions, categories, current category.
-  ..* Sample: `curl http://127.0.0.1:5000/questions`
+* General:
+  * Returns a list of questions, success, and total number of questions, categories, current category.
+  * Sample: `curl http://127.0.0.1:5000/questions`
  ```
  {
   "categories": {
@@ -171,9 +171,9 @@ The API will return these error types when requests fail:
  ```
   
 ##### POST /questions
-..* General:
-  ..* Creates a new question using the submitted question, answer, difficulty, category.
-  ..* Sample: `curl http://127.0.0.1:5000/questions -X POST -H "Content-Type: application/json" -d '{"question": "Demo Question", "answer": "Demo Answer", "difficulty": 5, "category"}'`
+* General:
+  * Creates a new question using the submitted question, answer, difficulty, category.
+  * Sample: `curl http://127.0.0.1:5000/questions -X POST -H "Content-Type: application/json" -d '{"question": "Demo Question", "answer": "Demo Answer", "difficulty": 5, "category"}'`
  ```
   {
     "success": true
