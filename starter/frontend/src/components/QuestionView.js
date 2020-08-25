@@ -4,6 +4,7 @@ import '../stylesheets/App.css';
 import Question from './Question';
 import Search from './Search';
 import $ from 'jquery';
+import { API_URL } from '../config.js'
 
 class QuestionView extends Component {
   constructor(){
@@ -23,7 +24,7 @@ class QuestionView extends Component {
 
   getQuestions = () => {
     $.ajax({
-      url: `http://localhost:5001/questions?page=${this.state.page}`, //TODO: update request URL
+      url: `${API_URL}/questions?page=${this.state.page}`, //TODO: update request URL
       type: "GET",
       success: (result) => {
         this.setState({
@@ -60,7 +61,7 @@ class QuestionView extends Component {
 
   getByCategory= (id) => {
     $.ajax({
-      url: `http://localhost:5001/categories/${id}/questions`, //TODO: update request URL
+      url: `${API_URL}/categories/${id}/questions`, //TODO: update request URL
       type: "GET",
       success: (result) => {
         this.setState({
@@ -78,7 +79,7 @@ class QuestionView extends Component {
 
   submitSearch = (searchTerm) => {
     $.ajax({
-      url: `http://localhost:5001/search`, //TODO: update request URL
+      url: `${API_URL}/search`, //TODO: update request URL
       type: "POST",
       dataType: 'json',
       contentType: 'application/json',
@@ -105,7 +106,7 @@ class QuestionView extends Component {
     if(action === 'DELETE') {
       if(window.confirm('are you sure you want to delete the question?')) {
         $.ajax({
-          url: `http://localhost:5001/questions/${id}`, //TODO: update request URL
+          url: `${API_URL}/questions/${id}`, //TODO: update request URL
           type: "DELETE",
           success: (result) => {
             this.getQuestions();

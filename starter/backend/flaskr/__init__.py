@@ -78,7 +78,7 @@ def create_app(test_config=None):
         'success': True,
         'questions': questions,
         'categories': formatCategories(categories),
-        'total_questions': len(questions),
+        'total_questions': len(question_collection),
         'current_category': None
       })
 
